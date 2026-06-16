@@ -184,7 +184,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.6rem;
 }
 .hero__title span { display: block; }
-.hero__title-accent { color: var(--red); }
+.hero__title-accent { color: var(--blue); }
 .hero__lead {
   max-width: 560px;
   font-size: clamp(1.02rem, 1.6vw, 1.22rem);
@@ -460,7 +460,7 @@ a.cta__contact:hover { background: rgba(216,35,42,.12); border-color: var(--red)
    ============================================================ */
 .client-logos {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: rgba(255,255,255,.1);
   border: 1px solid rgba(255,255,255,.1);
@@ -472,6 +472,8 @@ a.cta__contact:hover { background: rgba(216,35,42,.12); border-color: var(--red)
   transition: background .35s;
 }
 .client-logo:hover { background: #161b27; }
+.client-logo--full { grid-column: 1 / -1; }
+.client-logo--wide { grid-column: span 2; }
 /* white chip so full-color logos read cleanly on the dark section */
 .client-logo__chip {
   display: flex; align-items: center; justify-content: center;
@@ -708,7 +710,7 @@ a.contact-card:hover { border-color: var(--red); transform: translateX(4px); }
 /* ---------- Offices: two addresses, two sides, each with its map ---------- */
 .offices {
   margin-top: 1.6rem;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem;
+  display: grid; grid-template-columns: 1fr; gap: 1.4rem;
 }
 .office {
   background: rgba(255,255,255,.04);
