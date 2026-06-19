@@ -28,6 +28,15 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Lighter accent so navy text/links stay readable on dark backgrounds */
+.section--dark,
+.section--clients,
+.section--cta,
+.footer {
+  --red: #6ea8e0;
+  --red-dk: #8fc0ec;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
