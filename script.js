@@ -1,28 +1,33 @@
 // PT. Konstruksi Utama Indonesia — interactions
 
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Nav: shadow on scroll
 const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
+if (nav) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
 
 // Mobile menu
 const toggle = document.getElementById('navToggle');
 const links = document.querySelector('.nav__links');
-toggle.addEventListener('click', () => {
-  const open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
-});
-links.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A') {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-});
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  });
+  links.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 // Scroll-reveal
 const reveals = document.querySelectorAll('.reveal');
